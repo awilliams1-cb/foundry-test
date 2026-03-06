@@ -1,0 +1,21 @@
+name: Foundry TOML Check
+
+permissions: {}
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check:
+    name: Check foundry.toml
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Check foundry.toml
+        uses: awilliams1-cb/foundry-toml-checker@e5755e52a4a0d97b457fa350b87e54f4d02b31da
