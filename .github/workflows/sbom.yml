@@ -1,0 +1,21 @@
+name: SBOM
+
+permissions: {}
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sbom:
+    name: Submit dependency graph
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          submodules: recursive
+
+      - uses: awilliams1-cb/sol-deps@214f6ed2778d6b07e0a2bd26f1baffcf3ae3a4b9
