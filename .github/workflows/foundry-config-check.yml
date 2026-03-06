@@ -1,0 +1,22 @@
+name: Foundry Config Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-foundry-config:
+    name: Validate foundry.toml
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Validate foundry.toml
+        run: uv run scripts/check-foundry-config.py
