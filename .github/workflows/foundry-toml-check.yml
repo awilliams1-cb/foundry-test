@@ -18,4 +18,4 @@ jobs:
           persist-credentials: false
 
       - name: Check foundry.toml
-        uses: awilliams1-cb/foundry-toml-checker@e5755e52a4a0d97b457fa350b87e54f4d02b31da
+        uses: awilliams1-cb/foundry-toml-checker@27ee11ed34dfcffda2e6c8e2f36f22c5fcac22ec
