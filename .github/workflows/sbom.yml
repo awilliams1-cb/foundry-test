@@ -18,4 +18,4 @@ jobs:
           persist-credentials: false
           submodules: recursive
 
-      - uses: awilliams1-cb/sol-deps@214f6ed2778d6b07e0a2bd26f1baffcf3ae3a4b9
+      - uses: awilliams1-cb/sol-deps@174f0f6eeeeb52a83663cd566fc44d3e55d6e7b6
